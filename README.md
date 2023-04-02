@@ -2,7 +2,7 @@
 Group project. Amazon expenses tracker
 
 
-## Bunch of functions (files) to be written: 
+## 1. Bunch of functions (files) to be written: 
 ### main() - main algorithm
 ### registration() -> users_db()
 ### login()
@@ -10,7 +10,7 @@ Group project. Amazon expenses tracker
 ### report() 
 
 
-## Instructions splitted by functions
+## 2. Instructions splitted by functions
 
 ### registration() -> users_db()
 1. The program should accept username and password from the terminal for registration
