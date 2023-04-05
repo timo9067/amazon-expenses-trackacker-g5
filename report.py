@@ -4,11 +4,11 @@ def report(purchases, user_name, tel_number):
     total_delivery_charges *= 1  # Amazon charges 1 EURO per 1 kg
 
     # Calculate total item costs
-    total_item_cost = sum(purchase["total_cost"] for purchase in purchases)
+    total_item_cost = sum(purchase["cost"] for purchase in purchases)
 
     # Find most and least expensive orders
-    most_expensive = max(purchases, key=lambda x: x["total_cost"])
-    least_expensive = min(purchases, key=lambda x: x["total_cost"])
+    most_expensive = max(purchases, key=lambda x: x["cost"])
+    least_expensive = min(purchases, key=lambda x: x["cost"])
 
     # Calculate average cost per order
     num_orders = len(purchases)
@@ -44,7 +44,7 @@ def report(purchases, user_name, tel_number):
     print(
         f"name: {most_expensive['item']}            name: {least_expensive['item']}")
     print(
-        f"cost: {most_expensive['total_cost']:.2f} EURO          cost: {least_expensive['total_cost']:.2f} EURO")
+        f"cost: {most_expensive['cost']:.2f} EURO          cost: {least_expensive['cost']:.2f} EURO")
     print("  ")
     print(f"AVERAGE COST OF ITEM PER ORDER: {avg_cost_per_order:.2f} EURO")
     print(f"PURCHASE DATE RANGE: {purchase_date_range}")
@@ -57,28 +57,28 @@ purchases = [
     {
         "date": "02/10/2023",
         "item": "book",
-        "total_cost": 8,
+        "cost": 8,
         "weight": 2,
         "quantity": 1,
     },
     {
         "date": "10/10/2023",
         "item": "bike",
-        "total_cost": 300,
+        "cost": 300,
         "weight": 10,
         "quantity": 1,
     },
     {
         "date": "02/10/2023",
         "item": "phone case",
-        "total_cost": 8,
+        "cost": 8,
         "weight": 1,
         "quantity": 1,
     },
     {
         "date": "01/01/2023",
         "item": "pizza hoven",
-        "total_cost": 500,
+        "cost": 500,
         "weight": 20,
         "quantity": 1,
     },
