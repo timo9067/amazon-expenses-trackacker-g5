@@ -52,6 +52,8 @@ def report(purchases, user_name, tel_number):
     print(note)
 
 
+"""
+
 # Example
 purchases = [
     {
@@ -85,3 +87,5 @@ purchases = [
 ]
 
 report(purchases, "Federica", "1234567890")
+
+"""
