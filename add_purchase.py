@@ -21,7 +21,7 @@ def get_date(date_str):
     return formatted_date
 
 
-def add_purchase():
+def add_purchase(purchases):
     # Initialize variables
     date = ""
     item = ""
@@ -69,4 +69,5 @@ def add_purchase():
                 "Invalid input. Please enter a whole number greater than or equal to 1.")
 
     # Return the purchase information as a dictionary
-    return {"date": date, "item": item, "cost": cost, "weight": weight, "quantity": quantity}
+    purchases.append( {"date": date, "item": item, "cost": cost, "weight": weight, "quantity": quantity} )
+    
