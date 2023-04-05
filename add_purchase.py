@@ -1,27 +1,28 @@
 from datetime import datetime
 
+
+def check_date(mydate):
+    try:
+        mydate = mydate.replace("-","/")
+        mylist = mydate.split("/")
+        if len(mylist[0]) < 2:
+            return False
+        if len(mylist[1]) < 2:
+            return False
+        # https://www.programiz.com/python-programming/datetime/strptime
+        datetime.strptime(mydate, "%m/%d/%Y")
+        return True
+    except:
+        return False
+
 def get_date(date_str):
-    # Check if the input is in MM/DD/YYYY format
-    if "/" in date_str:
-        # Convert the date to MM/DD/YYYY format
-        formatted_date = date_str
-    elif "-" in date_str:
-        # Convert the date to MM/DD/YYYY format
-        formatted_date = date_str.replace("-", "/")
-    else:
-        # Prompt user to re-enter the date in the correct format
-        formatted_date = ""
-        while True:
-            try:
-                formatted_date = datetime.strptime(input("Invalid date format. Please enter the date of purchase in MM/DD/YYYY or MM-DD-YYYY format: "), '%m/%d/%Y')
-                break
-            except ValueError:
-                print("Invalid date format or date is not valid.")
-        formatted_date = formatted_date.strftime('%m/%d/%Y')
-    return formatted_date
+    # Check and correct if the input is not in MM/DD/YYYY format
+    while not check_date(date_str):
+        date_str = input("Invalid date format. Please enter the date of purchase in MM/DD/YYYY or MM-DD-YYYY format: ")
+    return(date_str)
 
 
-def add_purchase(purchases):
+def add_purchase():
     # Initialize variables
     date = ""
     item = ""
@@ -69,5 +70,4 @@ def add_purchase(purchases):
                 "Invalid input. Please enter a whole number greater than or equal to 1.")
 
     # Return the purchase information as a dictionary
-    purchases.append( {"date": date, "item": item, "cost": cost, "weight": weight, "quantity": quantity} )
-    
+    return {"date": date, "item": item, "cost": cost, "weight": weight, "quantity": quantity}
