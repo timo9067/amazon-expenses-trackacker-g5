@@ -15,7 +15,7 @@ def report(purchases, user_name, tel_number):
     avg_cost_per_order = total_item_cost / num_orders
 
     # Calculate purchase date range
-    purchase_dates = [purchase["date_of_purchase"] for purchase in purchases]
+    purchase_dates = [purchase["date"] for purchase in purchases]
     purchase_date_range = f"{min(purchase_dates)} to {max(purchase_dates)}"
 
     # Mask phone number with asterisks
@@ -34,7 +34,7 @@ def report(purchases, user_name, tel_number):
     print("| Amazon Expense Report |")
     print("-------------------------")
     print(
-        f"name: {user_name}    password: ***      Tel: +49{masked_tel_number}      Date: {purchases[0]['date_of_purchase']}")
+        f"name: {user_name}    password: ***      Tel: +49{masked_tel_number}      Date: {purchases[0]['date']}")
     print("----------------------------------")
     print(f"DELIVERY CHARGES       TOTAL ITEM COST             ")
     print(
@@ -55,28 +55,28 @@ def report(purchases, user_name, tel_number):
 # Example
 purchases = [
     {
-        "date_of_purchase": "02/10/2023",
+        "date": "02/10/2023",
         "item": "book",
         "total_cost": 8,
         "weight": 2,
         "quantity": 1,
     },
     {
-        "date_of_purchase": "10/10/2023",
+        "date": "10/10/2023",
         "item": "bike",
         "total_cost": 300,
         "weight": 10,
         "quantity": 1,
     },
     {
-        "date_of_purchase": "02/10/2023",
+        "date": "02/10/2023",
         "item": "phone case",
         "total_cost": 8,
         "weight": 1,
         "quantity": 1,
     },
     {
-        "date_of_purchase": "01/01/2023",
+        "date": "01/01/2023",
         "item": "pizza hoven",
         "total_cost": 500,
         "weight": 20,
