@@ -24,7 +24,13 @@ def report(purchases, user_name, tel_number):
     purchase_date_range = f"{min(purchase_dates)} to {max(purchase_dates)}"
 
     # Mask phone number with asterisks
-    masked_tel_number = tel_number[:3] + "***" + tel_number[-2:]
+    if tel_number.startswith("0049"):
+        masked_tel_number = "+49" + "***" + tel_number[-2:]
+    elif tel_number.startswith("+49"):
+        masked_tel_number = tel_number[:3] + "***" + tel_number[-2:]
+    else:
+        print("Invalid telephone number format")
+        return
 
     # Check if spending limit exceeded
     spending_limit = 500
@@ -39,7 +45,7 @@ def report(purchases, user_name, tel_number):
     print("| Amazon Expense Report |")
     print("-------------------------")
     print(
-        f"name: {user_name}    password: ***      Tel: +49{masked_tel_number}      Date: {purchases[0]['date']}")
+        f"name: {user_name}    password: ***      Tel: {masked_tel_number}      Date: {purchases[0]['date']}")
     print("----------------------------------")
     print(f"DELIVERY CHARGES       TOTAL ITEM COST             ")
     print(
@@ -57,7 +63,6 @@ def report(purchases, user_name, tel_number):
     print(note)
 
 
-"""
 # Example
 purchases = [
     {
@@ -89,7 +94,4 @@ purchases = [
         "quantity": 1,
     },
 ]
-
-report(purchases, "Federica", "1234567890")
-
-"""
+report(purchases, "Federica", "00491234567890")
