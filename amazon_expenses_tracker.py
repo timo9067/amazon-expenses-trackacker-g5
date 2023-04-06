@@ -122,7 +122,7 @@ while True:
             purchases.append(add_purchase.add_purchase()) # Sweta
         case "2": 
             # Fabricio
-            print(purchases)
+            #print(purchases)
             report.report(purchases, user_name, tel_number)
         case "3": 
             break
