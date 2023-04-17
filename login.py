@@ -37,5 +37,3 @@ def login(user_name, password):
             fail_count +=1
     
     return user_name, log_success
-
-print(login('2', '2'))
