@@ -65,13 +65,13 @@ def registration(user_name, password):
     if user_name !="":
         while fail_count <=3:        
         
-            fail_message = """Please try another password.
-            Your password should match the following criteria:
-                - Should have at least one number.
-                - Should have at least one uppercase and one lowercase character.
-                - Should have at least one special symbol.
-                - Should be between 6 to 20 characters long.
-                """
+            pass_message = """Your password should match the following criteria:
+    - Should have at least one number.
+    - Should have at least one uppercase and one lowercase character.
+    - Should have at least one special symbol.
+    - Should be between 6 to 20 characters long.
+    """
+            fail_message = "Please try another password.\n"
             
             if check_password(password):
                 reg_success = True
@@ -82,7 +82,9 @@ def registration(user_name, password):
                 break
                 
             else: 
-                print(fail_message)
+                if fail_count > 0: 
+                    print(fail_message)
+                print(pass_message)
                 print("Please choose a password for", user_name)  
                 password = str(input(":>>>"))  
                 fail_count +=1
