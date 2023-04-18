@@ -1,6 +1,4 @@
-"""
-
-   DCI Project "Amazon Expence Tracker"
+"""DCI Project "Amazon Expence Tracker"
    
    authors:
    Alina Ignat
