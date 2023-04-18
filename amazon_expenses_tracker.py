@@ -1,3 +1,31 @@
+"""
+
+   DCI Project "Amazon Expence Tracker"
+   
+   authors:
+   Alina Ignat
+   Fabricio Golino
+   Swetlana König
+   Timur Shakirov
+   
+   started: 04/01/2023
+   
+   project repository can be found here:
+       
+   https://github.com/timo9067/amazon-expenses-tracker-g5    
+   
+   This program aims to help users track their Amazon expenses by providing a user-friendly platform for entering 
+   details of each purchase, including the date, item, cost, quantity and weight. 
+   With this data, the program will generate comprehensive reports that show the user's total spending on Amazon, 
+   as well as the average cost of their purchases.
+   
+   This program can be started from the command line with the user's login name and password for registration, 
+   like this: python3 amazon_expenses_tracker.py 'username' 'password'. If the user's password does not meet the 
+   criteria for a valid password, the program will prompt the user to input a valid password. 
+   If the program is started without login credentials, the program will prompt the user to input their username and password.
+
+"""
+
 #importing modules
 import argparse
 import sys
