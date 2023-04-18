@@ -14,64 +14,10 @@
        
    https://github.com/timo9067/amazon-expenses-tracker-g5    
    
-   modules and subroutines 
-   =======================
+   This program aims to help users track their Amazon expenses by providing a user-friendly platform for entering details of each purchase, including the date, item, cost, quantity and weight. With this data, the program will generate comprehensive reports that show the user's total spending on Amazon, as well as the average cost of their purchases.
    
-   login.py 
-   --------
-   
-   login(user_name, password)
-   - validation of username and password
-   - returns user_name, log_success (True or False)
-   
-   registration.py
-   ---------------
-   
-   check_password(p) 
-   - syntax check of password p
-   - returns True of False
-   
-   registration_telnum() 
-   - regex check german phonenumber 
-   - returns a validated phonenumber
-   
-   registration(user_name, password)
-   - check username and password
-   - returns user_name, password, and sucess (True or False)
-   
-   add_purchase.py
-   ---------------
-   
-   check_date(mydate)
-   - is it a valid date?
-   - get back True or False
-   
-   get_date(date_str)
-   - usees check_date()
-   - loop while date is not ok
-   - returns a correct date
-   
-   add_purchase()
-   - input and check date, item, cost, weight, quantity
-   - returns a valid dictionary
-   
-   report.py
-   ---------
-   
-   report()
-   - print username, date and phonenumeber
-   - print statistik
-   - print spending limit info
-   
-   amazon_expenses_tracker.py - main program
-   -----------------------------------------
-   
-   - parsing command line
-   - checking user/password
-   - initialising empty list for purchased items
-   - menu - handle user input 1, 2, 3
-   - quitting
-   
+   This program can be started from the command line with the user's login name and password for registration, like this: python3 amazon_expenses_tracker.py 'username' 'password'. If the user's password does not meet the criteria for a valid password, the program will prompt the user to input a valid password. If the program is started without login credentials, the program will prompt the user to input their username and password.
+
 """
 
 # importing python modules
