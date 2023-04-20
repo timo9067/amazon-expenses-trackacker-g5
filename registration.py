@@ -33,10 +33,10 @@ def registration(user_name, password):
         while fail_count <=2:
             tel_number = input('Please enter your telephone number in format "+49 *** *** ****": \n ')
             # 
-            # pattern = r"^[+49][0-9]{7}+$"
+            # original pattern = r"^[+49][0-9]{7}+$"
             
-            # pattern from Google
-            pattern = r"[0-9]*\/*(\+49)+[ ]*(\([0-9]+\))*([ ]*(-|–)*[ ]*[0-9]+)*"
+            # modernisated pattern 
+            pattern = r"^(\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10,11})$"
 
             if re.search(pattern,tel_number) is None:
                 fail_count +=1
